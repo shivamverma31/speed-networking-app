@@ -10,5 +10,5 @@ import { MatCardModule } from '@angular/material/card';
   styleUrls: ['./results.component.scss'],
 })
 export class ResultsComponent {
-  @Input() pairs: [string, string][] = [];
+  @Input() groups: string[][] = [];
 }

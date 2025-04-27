@@ -1,12 +1,16 @@
-<app-upload (dataParsed)="onDataParsed($event)"></app-upload>
+<app-upload 
+(dataParsed)="onDataParsed($event)"
+[resetFileInput]="resetFileInput"
+></app-upload>
 
-<mat-form-field appearance="fill" *ngIf="columns.length">
-  <mat-label>Group by</mat-label>
-  <mat-select [(ngModel)]="groupKey">
-    <mat-option *ngFor="let col of columns" [value]="col">{{ col }}</mat-option>
-  </mat-select>
-</mat-form-field>
+<div style="margin: 20px 0;">
+  <button mat-raised-button color="primary" (click)="generateGroups()">
+    Let's Network!!!
+  </button>
+  &nbsp;
+  <button mat-raised-button color="secondary" (click)="clearData()">
+    Clear Data
+  </button>
+</div>
 
-<button mat-raised-button color="primary" (click)="generatePairs()">Generate Pairs</button>
-
-<app-results [pairs]="pairs"></app-results>
+<app-results [groups]="groups"></app-results>

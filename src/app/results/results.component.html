@@ -1,4 +1,6 @@
-<mat-card *ngFor="let pair of pairs">
-    <mat-card-content>{{ pair[0] }} ↔ {{ pair[1] }}</mat-card-content>
+<mat-card *ngFor="let group of groups" style="margin-bottom: 10px;">
+    <mat-card-content>
+      {{ group.join(' <--> ') }}
+    </mat-card-content>
   </mat-card>
   
