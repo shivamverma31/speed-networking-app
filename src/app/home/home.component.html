@@ -1,0 +1,12 @@
+<app-upload (dataParsed)="onDataParsed($event)"></app-upload>
+
+<mat-form-field appearance="fill" *ngIf="columns.length">
+  <mat-label>Group by</mat-label>
+  <mat-select [(ngModel)]="groupKey">
+    <mat-option *ngFor="let col of columns" [value]="col">{{ col }}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<button mat-raised-button color="primary" (click)="generatePairs()">Generate Pairs</button>
+
+<app-results [pairs]="pairs"></app-results>
